@@ -73,3 +73,11 @@ footer {
     text-align: center;
     padding: 1rem 0;
 }
+.running-text {
+  animation: runtext 5s linear infinite;
+}
+
+@keyframes runtext {
+  from { transform: translateX(100%); }
+  to { transform: translateX(-100%); }
+}
