@@ -1,20 +1,31 @@
-<html>
-  <body>
-    <h1>Hai Cantik!</h1>
-    <img src="https://media.tenor.com/-r71xTSUvD0AAAAi/peach-goma-love-finger-hearts.gif" />
-    <h1>Maukah kamu menjadi pacarku?</h1>
-    <button id="btn_mau" onclick="alert('I LOVE YOU')">Mau</button>&nbsp;
-    <button id="btn_gamau" onclick="gamau(this)" style="position: absolute">
-      Gamau
-    </button>
-  </body>
-  <script>
-    function gamau(id) {
-      var mau = document.getElementById("btn_mau");
-      var i = Math.floor(Math.random() * 300) + 1;
-      var j = Math.floor(Math.random() * 100) + mau.offsetTop;
-      id.style.left = i + "px";
-      id.style.top = j + "px";
-    }
-  </script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Hi There, Welcome</div>
+        </nav>
+    </header>
+    <section id="about">
+        <div class="container">
+            <h1>Here's The Information</h1>
+            <img src="profile.jpg" alt="My Photo" class="profile-photo">
+            <p>It's Me, Hi I'm The Problem It's Me.</p>
+            <a href="https://t.me/zallpaw" class="btn">Tele Gue Klik Sini Anjink</a>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 IjallP. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/5qIHFdkW6phMsTZlN2g8Lc?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
 </html>
