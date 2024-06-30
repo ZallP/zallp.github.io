@@ -1,83 +1,28 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
+.follow-me-box {
+  width: 250px; /* Adjust width as needed */
+  margin: 20px auto; /* Center the box */
+  background-color: #f0f0f0; /* Background color */
+  border-radius: 10px; /* Rounded corners */
+  padding: 20px; /* Padding around content */
+  text-align: center;
 }
 
-body {
-    color: #333;
-    line-height: 1.6;
+h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
 }
 
-header {
-    background: #333;
-    color: #fff;
-    padding: 1rem 0;
+.social-links {
+  display: flex; /* Arrange links in a row */
+  justify-content: center; /* Center links horizontally */
 }
 
-nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 2rem;
+.social-links a {
+  display: inline-block; /* Make links act like block elements */
+  margin: 0 10px; /* Space between links */
 }
 
-.logo {
-    font-size: 1.5rem;
-}
-
-section {
-    padding: 4rem 2rem;
-    text-align: center;
-}
-
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-}
-
-.profile-photo {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin-bottom: 1rem;
-}
-
-p {
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
-}
-
-.btn {
-    background: #0004ff;
-    color: #fff;
-    padding: 0.75rem 1.5rem;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background 0.3s ease;
-}
-
-.btn:hover {
-    background: #0004ff;
-}
-
-footer {
-    background: #333;
-    color: #fff;
-    text-align: center;
-    padding: 1rem 0;
-}
-.running-text {
-  animation: runtext 5s linear infinite;
-}
-
-@keyframes runtext {
-  from { transform: translateX(100%); }
-  to { transform: translateX(-100%); }
+.social-links img {
+  width: 30px; /* Adjust size as needed */
+  height: auto; /* Maintain aspect ratio */
 }
