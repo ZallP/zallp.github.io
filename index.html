@@ -1,197 +1,229 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ZallPaw — oprek HP, AOSP, HTML dan CSS</title>
+<meta name="description" content="Situs pribadi ZallPaw: oprek HP, Android Open Source Project, custom ROM, dan ngoding HTML/CSS.">
+<meta name="author" content="ZallPaw">
+<link rel="canonical" href="https://zallp.github.io/">
+<meta name="theme-color" content="#1b1e20" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f4f6f5" media="(prefers-color-scheme: light)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🐾%3C/text%3E%3C/svg%3E">
 
-    <!-- Primary Meta Tags -->
-    <title>ZallPaw website</title>
-    <meta name="title" content="ZallPaw">
-    <meta name="description"
-      content="Seorang gabut yang cuma ngoding html,css.">
-    <meta name="keywords"
-      content="Android Development, Custom ROMs, Of course Html and CSS">
-    <meta name="author" content="ZallPaw">
-    <meta name="robots" content="index, follow">
-    <meta name="language" content="English">
-    <meta name="theme-color" content="#1e1e1e">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ZallPaw">
+<meta property="og:title" content="ZallPaw">
+<meta property="og:description" content="Oprek HP, Android Open Source Project, custom ROM, dan ngoding HTML/CSS.">
+<meta property="og:url" content="https://zallp.github.io/">
+<meta property="og:locale" content="id_ID">
+<meta property="og:image" content="https://avatars.githubusercontent.com/u/87319970?v=4">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:creator" content="@ZallPaw">
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://zallp.github.io/">
-    <meta property="og:title" content="ZallPaw">
-    <meta property="og:description"
-      content="Android Development, Custom ROMs, Of course Html and CSS.">
-    <meta property="og:site_name" content="ZallPaw">
-    <meta property="og:locale" content="en_US">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 
-    <!-- Twitter -->
-    <meta property="twitter:url" content="https://zallp.github.io/">
-    <meta property="twitter:title" content="ZallPaw">
-    <meta property="twitter:description"
-      content="Android Development, Custom ROMs, Of course Html and CSS.">
-    <meta property="twitter:creator" content="@ZallPaw">
+<style>
+  :root {
+    color-scheme: dark light;
+    --bg: #1b1e20;
+    --fg: #dfe4e6;
+    --dim: #98a2a8;
+    --line: #33393d;
+    --accent: #3ddc84;   /* hijau Android */
+    --amber: #f0b955;
+    --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #f4f6f5;
+      --fg: #1d2326;
+      --dim: #566168;
+      --line: #cfd6d3;
+      --accent: #0a7a43;
+      --amber: #8a5a00;
+    }
+  }
 
-    <link rel="icon" href="static/favicon.ico" type="image/x-icon">
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet">
-    <link rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="static/styles.css">
-  </head>
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-padding-top: 4.5rem; }
+  @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
 
-  <body>
-    <!-- Header -->
-    <header class="header">
-      <div class="container">
-        <a href="#" class="header-logo">ZallPaw</a>
-        <nav class="nav-links">
-          <a href="#about" class="nav-link active">~/about</a>
-          <a href="#projects" class="nav-link">~/projects</a>
-          <a href="#contact" class="nav-link">~/contact</a>
-        </nav>
-      </div>
-    </header>
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font: 400 1rem/1.65 var(--mono);
+    -webkit-text-size-adjust: 100%;
+  }
 
-    <!-- Main Content -->
-    <main>
-      <div class="container">
-        <!-- About Section -->
-        <section id="about" class="terminal-section">
-          <div class="terminal-header">
-            <div class="terminal-controls">
-              <span class="terminal-dot"></span>
-              <span class="terminal-dot"></span>
-              <span class="terminal-dot"></span>
-            </div>
-            <span class="terminal-title">about.zsh</span>
-          </div>
-          <div class="terminal-body">
-            <div class="command-block">
-              <div class="command-line">
-                <span class="prompt">
-                  <span class="prompt-path">--- ~</span>
-                  <span class="prompt-arrow"> »</span>
-                </span>
-                <span class="command">cd ~/about</span>
-                <span class="cursor"></span>
-              </div>
-            </div>
+  a { color: var(--accent); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .2em; }
+  a:hover { text-decoration-thickness: 2px; }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
 
-            <div class="profile-content">
-              <img src="https://avatars.githubusercontent.com/u/87319970?v=4"
-                alt="ZallPaw" class="avatar" loading="lazy">
+  .skip { position: absolute; left: -999px; top: .5rem; background: var(--accent); color: var(--bg); padding: .4rem .8rem; z-index: 10; }
+  .skip:focus { left: .5rem; }
 
-              <div class="command-block">
-                <div class="command-line">
-                  <span class="prompt">
-                    <span class="prompt-path">--- ~/about</span>
-                    <span class="prompt-arrow"> »</span>
-                  </span>
-                  <span class="command">cat info.txt</span>
-                  <span class="cursor"></span>
-                </div>
-              </div>
+  /* ---------- nav ---------- */
+  .nav {
+    position: sticky; top: 0; z-index: 5;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    max-width: 46rem; margin: 0 auto; padding: .8rem 1.25rem;
+    display: flex; flex-wrap: wrap; gap: .4rem 1.5rem; align-items: baseline;
+  }
+  .brand { font-weight: 700; color: var(--fg); text-decoration: none; margin-right: auto; }
+  .nav a:not(.brand) { color: var(--dim); text-decoration: none; }
+  .nav a:not(.brand):hover { color: var(--accent); text-decoration: underline; }
 
-              <div class="output">
-                <h1>ZallPaw</h1>
-                <h2>Anak Tunggal pengcoding handal :v</h2>
-                <p>Passionate about Android Open Source Project (AOSP) Oprek HP lah intinya mah.</p>
-              </div>
-            </div>
-          </div>
-        </section>
+  /* ---------- layout ---------- */
+  main { max-width: 46rem; margin: 0 auto; padding: 0 1.25rem 4rem; }
+  section { padding-top: 3.5rem; }
+  p { margin: 0 0 1rem; max-width: 62ch; }
 
-        <!-- Projects Section -->
-        <section id="projects" class="terminal-section">
-          <div class="terminal-header">
-            <div class="terminal-controls">
-              <span class="terminal-dot"></span>
-              <span class="terminal-dot"></span>
-              <span class="terminal-dot"></span>
-            </div>
-            <span class="terminal-title">projects.zsh</span>
-          </div>
-          <div class="terminal-body">
-            <div class="command-block">
-              <div class="command-line">
-                <span class="prompt">
-                  <span class="prompt-path">--- ~/projects</span>
-                  <span class="prompt-arrow"> »</span>
-                </span>
-                <span class="command">ls -la</span>
-                <span class="cursor"></span>
-              </div>
-            </div>
+  .ps { color: var(--accent); font-weight: 700; margin-right: .6ch; user-select: none; }
+  h2 { margin: 0 0 1rem; font: 700 1.05rem/1.4 var(--mono); color: var(--fg); }
+  .note { color: var(--dim); }
 
-            <div class="projects-grid">
-              <div class="project-card">
-                <div class="project-type">
-                  <i class="fas fa-music"></i>
-                  <span>Current Music</span>
-                </div>
-                <h3>My Fav Song Right Now</h3>
-               <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0ug5NqcwcFR2xrfTkc7k8e?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-               <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/1gH1h30wkQdd9zhY3j7a8T?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-          </div>
-        </section>
+  /* ---------- hero ---------- */
+  .hero { padding-top: 3.5rem; }
+  .cmd { margin: 0 0 1.25rem; }
+  .avatar {
+    display: block; width: 96px; height: 96px;
+    border: 1px solid var(--line); border-radius: 4px;
+    margin-bottom: 1.25rem; background: var(--line);
+  }
+  h1 {
+    margin: 0 0 .5rem;
+    font: 700 clamp(2.6rem, 11vw, 4.6rem)/1 var(--mono);
+    letter-spacing: -.03em;
+  }
+  .tag { color: var(--dim); font-size: 1.05rem; }
 
-        <!-- Contact Section -->
-        <section id="contact" class="terminal-section">
-          <div class="terminal-header">
-            <div class="terminal-controls">
-              <span class="terminal-dot"></span>
-              <span class="terminal-dot"></span>
-              <span class="terminal-dot"></span>
-            </div>
-            <span class="terminal-title">contact.zsh</span>
-          </div>
-          <div class="terminal-body">
-            <div class="command-block">
-              <div class="command-line">
-                <span class="prompt">
-                  <span class="prompt-path">--- ~/contact</span>
-                  <span class="prompt-arrow"> »</span>
-                </span>
-                <span class="command">ls -la</span>
-                <span class="cursor"></span>
-              </div>
-            </div>
+  /* satu momen animasi: "whoami" diketik, lalu hasilnya muncul */
+  .type {
+    display: inline-block; overflow: hidden; white-space: nowrap;
+    vertical-align: bottom; width: 6ch;
+    animation: type .6s steps(6) .3s backwards;
+  }
+  .reveal { animation: show 0s linear 1s backwards; }
+  @keyframes type { from { width: 0; } }
+  @keyframes show { from { opacity: 0; visibility: hidden; } }
+  @media (prefers-reduced-motion: reduce) { .type, .reveal { animation: none; } }
 
-            <div class="social-links">
-              <a href="https://zallp.github.io" target="_blank"
-                rel="noopener noreferrer" class="social-link">
-                <i class="fab fa-github"></i>
-                <span class="file-info">drwxr-xr-x
-                  zallp.github.io</span>
-              </a>
-              <a href="https://id.linkedin.com/company/career-indomaret-group?trk=public_profile_experience-group-header" target="_blank"
-                rel="noopener noreferrer" class="social-link">
-                <i class="fab fa-linkedin"></i>
-                <span class="file-info">drwxr-xr-x
-               LinkedIn</span>
-              </a>
-            </div>
-          </div>
-        </section>
-      </div>
-    </main>
+  /* ---------- daftar key/value ---------- */
+  .props { margin: 0 0 1.25rem; display: grid; grid-template-columns: max-content 1fr; gap: .15rem 1.5ch; }
+  .props dt { color: var(--dim); }
+  .props dd { margin: 0; color: var(--amber); overflow-wrap: anywhere; }
+  .props dd a { color: var(--accent); }
+  @media (max-width: 30rem) {
+    .props { grid-template-columns: 1fr; gap: 0; }
+    .props dd { margin-bottom: .6rem; }
+  }
 
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="container">
-        <div class="command-block">
-          <div class="command-line">
-            <span class="prompt">
-              <span class="prompt-path">--- ~</span>
-              <span class="prompt-arrow"> »</span>
-            </span>
-            <span class="command">echo "Created by Ijall"</span>
-            <span class="cursor"></span>
-          </div>
-        </div>
-      </div>
-    </footer>
-  </body>
+  /* ---------- proyek ---------- */
+  .files { list-style: none; margin: 0 0 1rem; padding: 0; }
+  .files li { padding: .6rem 0; border-top: 1px solid var(--line); }
+  .files li:last-child { border-bottom: 1px solid var(--line); }
+  .files .desc { display: block; color: var(--dim); }
+
+  /* ---------- musik ---------- */
+  .tracks { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 19rem), 1fr)); }
+  .tracks iframe { width: 100%; height: 152px; border: 0; border-radius: 12px; color-scheme: normal; }
+
+  /* ---------- footer ---------- */
+  footer { margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid var(--line); color: var(--dim); }
+  footer p { margin: 0; }
+  .cursor { display: inline-block; width: .6em; height: 1.1em; background: var(--accent); vertical-align: text-bottom; }
+</style>
+</head>
+
+<body>
+<a class="skip" href="#about">Lompat ke konten</a>
+
+<nav class="nav" aria-label="Navigasi utama">
+  <div class="nav-inner">
+    <a class="brand" href="#top">ZallPaw</a>
+    <a href="#about">~/about</a>
+    <a href="#projects">~/projects</a>
+    <a href="#music">~/music</a>
+    <a href="#contact">~/contact</a>
+  </div>
+</nav>
+
+<main>
+  <header class="hero" id="top">
+    <p class="cmd"><span class="ps" aria-hidden="true">$</span><span class="type">whoami</span></p>
+    <div class="reveal">
+      <img class="avatar" src="https://avatars.githubusercontent.com/u/87319970?v=4" width="96" height="96" alt="Foto profil GitHub ZallPaw">
+      <h1>ZallPaw</h1>
+      <p class="tag">Seorang gabut yang cuma ngoding HTML, CSS.</p>
+    </div>
+  </header>
+
+  <section id="about" aria-labelledby="about-h">
+    <h2 id="about-h"><span class="ps" aria-hidden="true">$</span>cd ~/about</h2>
+    <dl class="props">
+      <dt>[zallpaw.nama]:</dt>      <dd>[ZallPaw]</dd>
+      <dt>[zallpaw.panggilan]:</dt> <dd>[Ijall]</dd>
+      <dt>[zallpaw.status]:</dt>    <dd>[anak tunggal, pengcoding handal :v]</dd>
+      <dt>[zallpaw.minat]:</dt>     <dd>[AOSP, custom ROM, oprek HP]</dd>
+      <dt>[zallpaw.bahasa]:</dt>    <dd>[HTML, CSS]</dd>
+    </dl>
+    <p>Suka banget sama Android Open Source Project (AOSP). Oprek HP lah intinya mah.</p>
+  </section>
+
+  <section id="projects" aria-labelledby="projects-h">
+    <h2 id="projects-h"><span class="ps" aria-hidden="true">$</span>ls ~/projects</h2>
+    <ul class="files">
+      <li>
+        <a href="https://github.com/zallp/zallp.github.io">zallp.github.io</a>
+        <span class="desc">Situs ini. HTML dan CSS saja, tanpa JavaScript.</span>
+      </li>
+      <!-- Tambah proyek baru dengan menyalin blok <li> di atas:
+      <li>
+        <a href="https://github.com/zallp/NAMA-REPO">NAMA-REPO</a>
+        <span class="desc">Satu kalimat tentang proyeknya.</span>
+      </li>
+      -->
+    </ul>
+    <p class="note">Proyek lainnya ada di <a href="https://github.com/zallp">github.com/zallp</a>.</p>
+  </section>
+
+  <section id="music" aria-labelledby="music-h">
+    <h2 id="music-h"><span class="ps" aria-hidden="true">$</span>now-playing</h2>
+    <p class="note">Lagu favorit saat ini.</p>
+    <div class="tracks">
+      <iframe title="Lagu favorit pertama di Spotify" loading="lazy"
+        src="https://open.spotify.com/embed/track/0ug5NqcwcFR2xrfTkc7k8e?utm_source=generator&amp;theme=0"
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+      <iframe title="Lagu favorit kedua di Spotify" loading="lazy"
+        src="https://open.spotify.com/embed/track/1gH1h30wkQdd9zhY3j7a8T?utm_source=generator&amp;theme=0"
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+    </div>
+  </section>
+
+  <section id="contact" aria-labelledby="contact-h">
+    <h2 id="contact-h"><span class="ps" aria-hidden="true">$</span>ls ~/contact</h2>
+    <dl class="props">
+      <dt>github</dt> <dd><a href="https://github.com/zallp">github.com/zallp</a></dd>
+      <dt>x</dt>      <dd><a href="https://x.com/ZallPaw">@ZallPaw</a></dd>
+      <!-- Tambah kontak lain di sini, misalnya LinkedIn pribadi atau email:
+      <dt>linkedin</dt> <dd><a href="https://www.linkedin.com/in/USERNAME-KAMU">linkedin.com/in/USERNAME-KAMU</a></dd>
+      <dt>email</dt>    <dd><a href="mailto:ALAMAT@EMAIL.COM">ALAMAT@EMAIL.COM</a></dd>
+      -->
+    </dl>
+  </section>
+
+  <footer>
+    <p><span class="ps" aria-hidden="true">$</span>echo "Created by Ijall"</p>
+    <p>Created by Ijall</p>
+    <p aria-hidden="true"><span class="ps">$</span><span class="cursor"></span></p>
+  </footer>
+</main>
+</body>
 </html>
